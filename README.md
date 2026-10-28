@@ -16,6 +16,22 @@ npm run android  # emulatore Android
 npm run typecheck
 ```
 
+## Versione web
+
+Dipendenze necessarie (una tantum, scelgono le versioni compatibili con l'SDK):
+
+```bash
+npx expo install react-dom react-native-web @expo/metro-runtime
+```
+
+```bash
+npm run web        # sviluppo nel browser
+npm run build:web  # genera la cartella dist/ (sito statico)
+```
+
+Per pubblicarla, carica la cartella `dist/` su un hosting statico
+(Netlify, Vercel, Cloudflare Pages, GitHub Pages).
+
 ## Struttura
 
 - `App.tsx`: schermata principale (messaggio + pulsante "Nuovo messaggio")

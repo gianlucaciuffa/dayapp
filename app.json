@@ -11,6 +11,10 @@
     },
     "android": {
       "package": "com.gianlucaciuffa.dayapp"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
     }
   }
 }
