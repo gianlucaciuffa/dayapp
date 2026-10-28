@@ -6,19 +6,11 @@ import { colors, fonts } from '../theme';
 
 type Props = {
   quote: Quote;
-  saved: boolean;
-  onToggleSave: () => void;
   onShare: () => void;
   onNext: () => void;
 };
 
-export function TodayScreen({
-  quote,
-  saved,
-  onToggleSave,
-  onShare,
-  onNext,
-}: Props) {
+export function QuoteScreen({ quote, onShare, onNext }: Props) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -27,33 +19,15 @@ export function TodayScreen({
         <Text style={styles.author}>— {quote.author}</Text>
       </View>
 
-      <View style={styles.actions}>
-        <Pressable
-          style={styles.action}
-          onPress={onToggleSave}
-          accessibilityRole="button"
-          accessibilityLabel={saved ? 'Rimuovi dai preferiti' : 'Salva nei preferiti'}
-        >
-          <Feather
-            name="heart"
-            size={30}
-            color={saved ? colors.sageDark : colors.muted}
-          />
-          <Text style={[styles.actionText, saved && { color: colors.sageDark }]}>
-            {saved ? 'Salvata' : 'Salva'}
-          </Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.action}
-          onPress={onShare}
-          accessibilityRole="button"
-          accessibilityLabel="Condividi la citazione"
-        >
-          <Feather name="share-2" size={28} color={colors.muted} />
-          <Text style={styles.actionText}>Condividi</Text>
-        </Pressable>
-      </View>
+      <Pressable
+        style={styles.share}
+        onPress={onShare}
+        accessibilityRole="button"
+        accessibilityLabel="Condividi la citazione"
+      >
+        <Feather name="share-2" size={28} color={colors.muted} />
+        <Text style={styles.shareText}>Condividi</Text>
+      </Pressable>
 
       <Pressable
         onPress={onNext}
@@ -69,7 +43,7 @@ export function TodayScreen({
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingHorizontal: 24, paddingBottom: 24 },
+  container: { flex: 1, paddingHorizontal: 24, paddingVertical: 24 },
   content: { flex: 1, justifyContent: 'center' },
   label: {
     fontFamily: fonts.sans,
@@ -90,9 +64,13 @@ const styles = StyleSheet.create({
     color: colors.inkSoft,
     marginTop: 32,
   },
-  actions: { flexDirection: 'row', gap: 40, marginBottom: 24 },
-  action: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-  actionText: { fontFamily: fonts.sans, fontSize: 18, color: colors.muted },
+  share: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 24,
+  },
+  shareText: { fontFamily: fonts.sans, fontSize: 18, color: colors.muted },
   button: {
     flexDirection: 'row',
     alignItems: 'center',

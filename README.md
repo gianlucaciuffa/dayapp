@@ -40,9 +40,8 @@ Per pubblicarla, carica la cartella `dist/` su un hosting statico
 
 ## Struttura
 
-- `App.tsx`: font, stato (citazione, preferiti) e schede
-- `src/screens/`: Oggi, Preferiti, Anima
-- `src/components/`: intestazione e barra delle schede
+- `App.tsx`: caricamento font e stato della citazione
+- `src/screens/QuoteScreen.tsx`: schermata unica
 - `src/quotes.ts`: citazioni, citazione del giorno e casuale
 - `src/share.ts`: condivisione (foglio di sistema, con ripiego su WhatsApp)
 - `src/theme.ts`: colori e font
