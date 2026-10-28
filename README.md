@@ -52,3 +52,6 @@ Per pubblicarla, carica la cartella `dist/` su un hosting statico
 WhatsApp, Facebook, Instagram o un'altra app installata. Instagram non
 permette di precompilare un testo da un link, quindi non c'è un tasto
 diretto: passa dal foglio di sistema.
+
+Nella versione web, il tasto è nascosto sui browser desktop (PC e Mac) e
+visibile su telefono e tablet.

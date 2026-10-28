@@ -2,6 +2,7 @@ import { Feather } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import type { Quote } from '../quotes';
+import { canShare } from '../share';
 import { colors, fonts } from '../theme';
 
 type Props = {
@@ -19,24 +20,26 @@ export function QuoteScreen({ quote, onShare, onNext }: Props) {
         <Text style={styles.author}>— {quote.author}</Text>
       </View>
 
-      <Pressable
-        style={styles.share}
-        onPress={onShare}
-        accessibilityRole="button"
-        accessibilityLabel="Condividi la citazione"
-      >
-        <Feather name="share-2" size={28} color={colors.muted} />
-        <Text style={styles.shareText}>Condividi</Text>
-      </Pressable>
+      {canShare() && (
+        <Pressable
+          style={styles.share}
+          onPress={onShare}
+          accessibilityRole="button"
+          accessibilityLabel="Condividi la citazione"
+        >
+          <Feather name="share-2" size={28} color={colors.muted} />
+          <Text style={styles.shareText}>Condividi</Text>
+        </Pressable>
+      )}
 
       <Pressable
         onPress={onNext}
         style={({ pressed }) => [styles.button, { opacity: pressed ? 0.85 : 1 }]}
         accessibilityRole="button"
-        accessibilityLabel="Mostra un'altra citazione"
+        accessibilityLabel="Mostra un altro pensiero"
       >
         <Feather name="refresh-cw" size={22} color={colors.white} />
-        <Text style={styles.buttonText}>Stupiscimi ancora</Text>
+        <Text style={styles.buttonText}>Un altro pensiero</Text>
       </Pressable>
     </View>
   );
