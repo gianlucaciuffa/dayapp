@@ -1,12 +1,18 @@
 # DayApp
 
-App mobile (iOS e Android) che mostra messaggi motivazionali casuali.
+App mobile (iOS e Android) che mostra una citazione motivazionale al giorno.
 Costruita con [Expo](https://expo.dev) e React Native (TypeScript).
 
-Al momento è solo frontend: i messaggi sono in `src/messages.ts`.
+Al momento è solo frontend: le citazioni sono in `src/quotes.ts`.
 Il backend verrà aggiunto in seguito.
 
 ## Avvio
+
+Dipendenze di grafica (font e icone), da installare una tantum:
+
+```bash
+npx expo install @expo/vector-icons expo-font @expo-google-fonts/cormorant-garamond @expo-google-fonts/jost
+```
 
 ```bash
 npm install
@@ -34,5 +40,16 @@ Per pubblicarla, carica la cartella `dist/` su un hosting statico
 
 ## Struttura
 
-- `App.tsx`: schermata principale (messaggio + pulsante "Nuovo messaggio")
-- `src/messages.ts`: elenco messaggi e `getRandomMessage()`
+- `App.tsx`: font, stato (citazione, preferiti) e schede
+- `src/screens/`: Oggi, Preferiti, Anima
+- `src/components/`: intestazione e barra delle schede
+- `src/quotes.ts`: citazioni, citazione del giorno e casuale
+- `src/share.ts`: condivisione (foglio di sistema, con ripiego su WhatsApp)
+- `src/theme.ts`: colori e font
+
+## Condivisione
+
+"Condividi" apre il foglio di condivisione del sistema: da lì si sceglie
+WhatsApp, Facebook, Instagram o un'altra app installata. Instagram non
+permette di precompilare un testo da un link, quindi non c'è un tasto
+diretto: passa dal foglio di sistema.
