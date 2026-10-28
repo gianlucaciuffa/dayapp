@@ -4,7 +4,7 @@
     "slug": "dayapp",
     "version": "0.1.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.gianlucaciuffa.dayapp"
