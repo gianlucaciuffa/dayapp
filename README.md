@@ -1,4 +1,4 @@
-# DayApp
+# anima
 
 App mobile (iOS e Android) che mostra una citazione motivazionale al giorno.
 Costruita con [Expo](https://expo.dev) e React Native (TypeScript).
@@ -37,6 +37,13 @@ npm run build:web  # genera la cartella dist/ (sito statico)
 
 Per pubblicarla, carica la cartella `dist/` su un hosting statico
 (Netlify, Vercel, Cloudflare Pages, GitHub Pages).
+
+## Pubblicazione
+
+Vedi [`docs/publishing.md`](docs/publishing.md) (passi per web, Android e iOS)
+e [`docs/store-listing.md`](docs/store-listing.md) (testi per gli store).
+L'informativa sulla privacy è in `public/privacy.html`: va completata con i
+dati di contatto prima di pubblicare.
 
 ## Struttura
 

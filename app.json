@@ -1,20 +1,41 @@
 {
   "expo": {
-    "name": "DayApp",
-    "slug": "dayapp",
-    "version": "0.1.0",
+    "name": "anima",
+    "slug": "anima",
+    "scheme": "anima",
+    "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FCFBF9"
+    },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gianlucaciuffa.dayapp"
+      "bundleIdentifier": "com.gianlucaciuffa.anima",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.gianlucaciuffa.dayapp"
+      "package": "com.gianlucaciuffa.anima",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#8F9A89"
+      }
     },
     "web": {
       "bundler": "metro",
-      "output": "single"
+      "output": "single",
+      "name": "anima",
+      "shortName": "anima",
+      "description": "Una frase al giorno per fermarti un momento, respirare e ripartire.",
+      "lang": "it",
+      "backgroundColor": "#FCFBF9",
+      "themeColor": "#8F9A89",
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
